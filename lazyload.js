@@ -104,6 +104,9 @@
                         let src = entry.target.getAttribute(self.settings.src);
                         let srcset = entry.target.getAttribute(self.settings.srcset);
                         if ("img" === entry.target.tagName.toLowerCase()) {
+
+                            entry.target.classList.add('loaded');
+
                             if (src) {
                                 entry.target.src = src;
                             }
@@ -135,7 +138,10 @@
             this.images.forEach(function (image) {
                 let src = image.getAttribute(self.settings.src);
                 let srcset = image.getAttribute(self.settings.srcset);
+
                 if ("img" === image.tagName.toLowerCase()) {
+                    image.classList.add('loaded');
+
                     if (src) {
                         image.src = src;
                     }
